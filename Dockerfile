@@ -27,7 +27,7 @@ COPY . .
 ENV CGO_ENABLED=0
 ENV GOOS=linux
 
-RUN go build -tags netgo -ldflags="-s -w" -o api-golang .
+RUN go build -tags netgo -ldflags="-s -w" -o api-golang ./cmd/api/
 
 # ========= Runtime Image =========
 FROM gcr.io/distroless/base-debian12:nonroot
